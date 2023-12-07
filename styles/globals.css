@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+@keyframes slideRight1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideRight2 {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(30%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideRight3 {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(70%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Animation loop */
+.animation-slide-right-1 {
+  animation: slideRight1 15s linear infinite; /* Adjust duration and timing as needed */
+}
+
+.animation-slide-right-2 {
+  animation: slideRight2 15s linear infinite; /* Adjust duration and timing as needed */
+}
+
+.animation-slide-right-3 {
+  animation: slideRight3 15s linear infinite; /* Adjust duration and timing as needed */
+}
+
+/* Add these styles to your existing CSS file or style tag */
+
+/* Add these styles to your existing CSS file or style tag */
+
+/* Keyframes for the scroll animation from left to right */
+/* Add these styles to your existing CSS file or style tag */
+
+/* Keyframes for the scroll animation from left to right for the first set */
+@keyframes scrollAnimationLeftToRight {
+  0% {
+    transform: translateX(0%); /* Start position */
+  }
+  100% {
+    transform: translateX(100%); /* Move entire width of container */
+  }
+}
+
+/* Keyframes for the scroll animation from right to left for the first set */
+@keyframes scrollAnimationRightToLeft {
+  0% {
+    transform: translateX(0%); /* Start position */
+  }
+  100% {
+    transform: translateX(-100%); /* Move entire width of container */
+  }
+}
+
+/* Keyframes for the scroll animation from right to left for the second set */
+@keyframes scrollAnimationRightToLeftSecondSet {
+  0% {
+    transform: translateX(0%); /* Start position */
+  }
+  100% {
+    transform: translateX(-100%); /* Move entire width of container */
+  }
+}
+
+/* Keyframes for the scroll animation from left to right for the second set */
+@keyframes scrollAnimationLeftToRightSecondSet {
+  0% {
+    transform: translateX(0%); /* Start position */
+  }
+  100% {
+    transform: translateX(100%); /* Move entire width of container */
+  }
+}
+
+/* Scrollable container for the first set of cards */
+.scroll-container-1 {
+  overflow: hidden; /* Hide the overflow on the container */
+  white-space: nowrap;
+  width: 100%; /* Make sure the container takes full width */
+  animation: scrollAnimationLeftToRight 10s linear infinite; /* Apply the first animation */
+}
+
+/* Scrollable container for the second set of cards */
+.scroll-container-2 {
+  overflow: hidden; /* Hide the overflow on the container */
+  white-space: nowrap;
+  width: 100%; /* Make sure the container takes full width */
+  animation: scrollAnimationRightToLeftSecondSet 12s linear infinite; /* Apply the second animation */
+}
+
+/* Card container styles for both sets of cards */
+.card-container {
+  display: inline-block;
+  margin-right: 16px; /* Adjust margin between cards */
+  vertical-align: top;
+}
+
+/* Apply different animation to the second set of cards */
+.scroll-container-2 > .card-container {
+  animation: scrollAnimationRightToLeftSecondSet 12s linear infinite; /* Apply the second animation */
+}
